@@ -1,11 +1,11 @@
-const resultEl = document.getElementById('result')
-const lengthEl = document.getElementById('length')
-const uppercaseEl = document.getElementById('uppercase')
-const lowercaseEl = document.getElementById('lowercase')
-const numbersEl = document.getElementById('numbers')
-const symbolsEl = document.getElementById('symbols')
-const generateEl = document.getElementById('generate')
-const clipboardEl = document.getElementById('clipboard')
+const resultElement = document.getElementById('result')
+const lengthElement = document.getElementById('length')
+const uppercaseElement = document.getElementById('uppercase')
+const lowercaseElement = document.getElementById('lowercase')
+const numbersElement = document.getElementById('numbers')
+const symbolsElement = document.getElementById('symbols')
+const generateElement = document.getElementById('generate')
+const clipboardElement = document.getElementById('clipboard')
 
 const randomFunc = {
     lower: getRandomLower,
@@ -14,8 +14,8 @@ const randomFunc = {
     symbol: getRandomSymbol
 }
 
-clipboardEl.addEventListener('click', () => {
-    const password = resultEl.innerText;
+clipboardElement.addEventListener('click', () => {
+    const password = resultElement.innerText;
   if (!password) {
     return;
   }
@@ -23,14 +23,14 @@ clipboardEl.addEventListener('click', () => {
     alert('Password copied to clipboard!')
 })
 
-generateEl.addEventListener('click', () => {
-    const length = +lengthEl.value
-    const hasLower = lowercaseEl.checked
-    const hasUpper = uppercaseEl.checked
-    const hasNumber = numbersEl.checked
-    const hasSymbol = symbolsEl.checked
+generateElement.addEventListener('click', () => {
+    const length = +lengthElement.value
+    const hasLower = lowercaseElement.checked
+    const hasUpper = uppercaseElement.checked
+    const hasNumber = numbersElement.checked
+    const hasSymbol = symbolsElement.checked
 
-    resultEl.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length)
+    resultElement.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length)
 })
 
 function generatePassword(lower, upper, number, symbol, length) {
